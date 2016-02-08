@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		017598531C65237B00BF9D6F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017598521C65237B00BF9D6F /* User.swift */; };
+		017598551C6523A600BF9D6F /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017598541C6523A600BF9D6F /* Tweet.swift */; };
+		017598591C6811D900BF9D6F /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017598581C6811D900BF9D6F /* TweetsViewController.swift */; };
+		0175985D1C6820AF00BF9D6F /* TweetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0175985C1C6820AF00BF9D6F /* TweetsTableViewCell.swift */; };
 		01BD7CF61C617B3700C22A98 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD7CF51C617B3700C22A98 /* TwitterClient.swift */; };
 		01F1EC501C61756D00E6C77D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F1EC4F1C61756D00E6C77D /* AppDelegate.swift */; };
 		01F1EC521C61756D00E6C77D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F1EC511C61756D00E6C77D /* ViewController.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		017598521C65237B00BF9D6F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		017598541C6523A600BF9D6F /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		017598581C6811D900BF9D6F /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
+		0175985C1C6820AF00BF9D6F /* TweetsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsTableViewCell.swift; sourceTree = "<group>"; };
 		01BD7CF51C617B3700C22A98 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
 		01F1EC4C1C61756D00E6C77D /* Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F1EC4F1C61756D00E6C77D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +50,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		017598511C65235900BF9D6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				017598521C65237B00BF9D6F /* User.swift */,
+				017598541C6523A600BF9D6F /* Tweet.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		01BD7CF41C61782600C22A98 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,10 +88,13 @@
 		01F1EC4E1C61756D00E6C77D /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
+				017598511C65235900BF9D6F /* Models */,
 				01BD7CF41C61782600C22A98 /* API */,
 				01F1EC4F1C61756D00E6C77D /* AppDelegate.swift */,
 				01F1EC511C61756D00E6C77D /* ViewController.swift */,
 				01F1EC531C61756D00E6C77D /* Main.storyboard */,
+				017598581C6811D900BF9D6F /* TweetsViewController.swift */,
+				0175985C1C6820AF00BF9D6F /* TweetsTableViewCell.swift */,
 				01F1EC561C61756D00E6C77D /* Assets.xcassets */,
 				01F1EC581C61756D00E6C77D /* LaunchScreen.storyboard */,
 				01F1EC5B1C61756D00E6C77D /* Info.plist */,
@@ -222,6 +242,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				017598531C65237B00BF9D6F /* User.swift in Sources */,
+				0175985D1C6820AF00BF9D6F /* TweetsTableViewCell.swift in Sources */,
+				017598551C6523A600BF9D6F /* Tweet.swift in Sources */,
+				017598591C6811D900BF9D6F /* TweetsViewController.swift in Sources */,
 				01F1EC521C61756D00E6C77D /* ViewController.swift in Sources */,
 				01BD7CF61C617B3700C22A98 /* TwitterClient.swift in Sources */,
 				01F1EC501C61756D00E6C77D /* AppDelegate.swift in Sources */,
