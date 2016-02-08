@@ -18,6 +18,7 @@ class User: NSObject {
     var screenname: String?
     var profileImageUrl: String?
     var tagline: String?
+    var favoriteCount: Int?
     var dictionary: NSDictionary
     
     init(dictionary: NSDictionary) {
@@ -27,6 +28,7 @@ class User: NSObject {
         screenname = dictionary["screen_name"] as? String
         profileImageUrl = dictionary["profile_image_url"] as? String
         tagline = dictionary["description"] as? String
+        favoriteCount = dictionary["favourites_count"] as? Int
     }
     
     func logout() {
