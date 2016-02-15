@@ -83,6 +83,30 @@ class TwitterClient: BDBOAuth1SessionManager {
         }
     }
     
+    func makeTweet(message: String) {
+        POST("https://api.twitter.com/1.1/statuses/update.json?status=\(message)", parameters: nil, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            print("Successfully posted")
+            }) { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                print("Failed to post")
+        }
+    }
+    
+    func myCredentials(completion: (user: User, error: NSError?) -> ()) {
+        TwitterClient.sharedInstance.GET("1.1/account/verify_credentials.json", parameters: nil, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            //             print("User: \(response)")
+            let user = User(dictionary: response as! NSDictionary)
+            User.currentUser = user
+            print("User: \(user.name!)")
+            
+            completion(user: user, error: nil)
+            
+            }, failure: { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                print("Did not get user")
+                self.loginCompletion?(user: nil, error: error)
+                //                completion(user: , error: nil)
+        })
+    }
+    
     func openURL(url: NSURL) {
         fetchAccessTokenWithPath("oauth/access_token", method: "POST", requestToken: BDBOAuth1Credential(queryString: url.query), success: { (accessToken: BDBOAuth1Credential!) -> Void in
             print("Got access token")
