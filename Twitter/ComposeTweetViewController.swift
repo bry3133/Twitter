@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ComposeTweetViewController: UIViewController {
+class ComposeTweetViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var handleLabel: UILabel!
-    @IBOutlet weak var tweetText: UITextField!
+    @IBOutlet weak var tweetText: UITextView!
     @IBOutlet weak var characterLimitLabel: UILabel!
     @IBOutlet weak var sendButton1: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -35,15 +35,15 @@ class ComposeTweetViewController: UIViewController {
         if (user.profileImageUrl != nil) {
             self.profileImage.setImageWithURL(NSURL(string: user.profileImageUrl!)!)
         }
+        self.tweetText.delegate = self
+
         
         // Do any additional setup after loading the view.
         }
 
         
     }
-    
-    
-    @IBAction func textChanged(sender: AnyObject) {
+    @IBAction func textViewDidBeginEditing(textView: UITextView) {
         print("changed")
         let temp = tweetText.text
         let numTemp = temp?.characters.count

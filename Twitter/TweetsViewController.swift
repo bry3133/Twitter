@@ -20,6 +20,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.estimatedRowHeight = 60
+        tableView.rowHeight = UITableViewAutomaticDimension
 
         callTwitterUpdateTweetsAPI()
         

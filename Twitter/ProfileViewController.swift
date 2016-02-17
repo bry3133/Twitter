@@ -22,12 +22,16 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nameLabel.text = user.name
-        profileImage.setImageWithURL(NSURL(string: user!.profileImageUrl!)!)
-        headerImage.setImageWithURL(NSURL(string: user!.headerImageUrl!)!)
-        tweetCtLabel.text = "\(user.tweetCount)"
-        followingCtLabel.text = "\(user.followingCount)"
-        followerCtLabel.text = "\(user.followerCount)"
+        nameLabel.text = tweet.user!.name
+        
+        profileImage.setImageWithURL(NSURL(string: tweet.user!.profileImageUrl!)!)
+        profileImage.layer.cornerRadius = 5;
+        profileImage.clipsToBounds = true
+        
+        headerImage.setImageWithURL(NSURL(string: tweet.user!.headerImageUrl!)!)
+        tweetCtLabel.text = "\(tweet.user!.tweetCount!)"
+        followingCtLabel.text = "\(tweet.user!.followingCount!)"
+        followerCtLabel.text = "\(tweet.user!.followerCount!)"
         
         
         // Do any additional setup after loading the view.

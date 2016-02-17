@@ -18,7 +18,6 @@ class User: NSObject {
     var screenname: String?
     var profileImageUrl: String?
     var tagline: String?
-    var favoriteCount: Int?
     var followingCount: Int?
     var tweetCount: Int?
     var headerImageUrl: String?
@@ -32,8 +31,7 @@ class User: NSObject {
         screenname = dictionary["screen_name"] as? String
         profileImageUrl = dictionary["profile_image_url"] as? String
         tagline = dictionary["description"] as? String
-        favoriteCount = dictionary["favourites_count"] as? Int
-        headerImageUrl = dictionary["profile_background_image_url"] as? String
+        headerImageUrl = dictionary["profile_banner_url"] as? String
         followerCount = dictionary["followers_count"] as? Int
         followingCount = dictionary["friends_count"] as? Int
         tweetCount = dictionary["statuses_count"] as? Int

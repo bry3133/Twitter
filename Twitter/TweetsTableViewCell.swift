@@ -36,6 +36,8 @@ class TweetsTableViewCell: UITableViewCell {
             }
             if (tweet.user?.profileImageUrl != nil) {
                 profileImage.setImageWithURL(NSURL(string: tweet.user!.profileImageUrl!)!)
+                profileImage.layer.cornerRadius = 5;
+                profileImage.clipsToBounds = true
             }
             if (tweet.createdAtString != nil) {
                 timestampLabel.text = "\(tweet.createdAtString!)"
@@ -67,8 +69,8 @@ class TweetsTableViewCell: UITableViewCell {
             if (tweet.retweetCount != nil) {
                 rtCountLabel.text = "\(tweet.retweetCount!)"
             }
-            if (tweet.user?.favoriteCount != nil) {
-                favCountLabel.text = "\(tweet.user!.favoriteCount!)"
+            if (tweet.favoriteCount != nil) {
+                favCountLabel.text = "\(tweet.favoriteCount!)"
             }
         }
     }
@@ -111,16 +113,16 @@ class TweetsTableViewCell: UITableViewCell {
         if (isFav) {
             favButton.tintColor = UIColor.redColor()
             favCountLabel.textColor = UIColor.redColor()
-            if (tweet.user?.favoriteCount != nil) {
-                tweet.user?.favoriteCount = tweet.user!.favoriteCount! + 1
+            if (tweet.favoriteCount != nil) {
+                tweet.favoriteCount = tweet.favoriteCount! + 1
             }
             TwitterClient.sharedInstance.favoriteMe(tweet.id!)
         }
         else {
             favButton.tintColor = UIColor.grayColor()
             favCountLabel.textColor = UIColor.grayColor()
-            if (tweet.user?.favoriteCount != nil) {
-                tweet.user?.favoriteCount = tweet.user!.favoriteCount! - 1
+            if (tweet.favoriteCount != nil) {
+                tweet.favoriteCount = tweet.favoriteCount! - 1
             }
             TwitterClient.sharedInstance.unFavoriteMe(tweet.id!)
         }

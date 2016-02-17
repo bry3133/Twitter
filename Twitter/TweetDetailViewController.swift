@@ -17,6 +17,7 @@ class TweetDetailViewController: UIViewController {
     @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var rtCountLabel: UILabel!
     @IBOutlet weak var favCountLabel: UILabel!
+    @IBOutlet weak var imageButton: UIButton!
     
     var tweet: Tweet!
     
@@ -28,9 +29,10 @@ class TweetDetailViewController: UIViewController {
         profileImage.setImageWithURL(NSURL(string: tweet.user!.profileImageUrl!)!)
         timestampLabel.text = "\(tweet.createdAtString!)"
         handleLabel.text = "@\(tweet.user!.screenname!)"
-        favCountLabel.text = "\(tweet.user!.favoriteCount!)"
+        favCountLabel.text = "\(tweet.favoriteCount!)"
         rtCountLabel.text = "\(tweet.retweetCount!)"
         
+        self.view.bringSubviewToFront(imageButton)
         
         print(tweet)
 
@@ -51,7 +53,9 @@ class TweetDetailViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if (segue.identifier == "DetailtoProfile") {
+        print("here")
+        
+        if segue.identifier == "DetailtoProfile" {
             
             let profileViewController = segue.destinationViewController as! ProfileViewController
             profileViewController.tweet = tweet
